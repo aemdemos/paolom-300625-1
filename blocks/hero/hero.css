@@ -1,3 +1,4 @@
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -44,4 +45,90 @@
   .hero {
     padding: 40px 32px;
   }
+}
+
+/* --- GENERATED CSS: --- */
+
+/* .hero.hero6 replaced by merged block below */
+
+/* Ensure both children (image and headline containers) are stacked and visible */
+.hero.hero6 > div {
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove any unwanted collapse on inner divs */
+.hero.hero6 > div:first-child,
+.hero.hero6 > div:first-child > div {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make the image visible and styled */
+.hero.hero6 > div:first-child > div > picture {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hero.hero6 > div:first-child > div > picture img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 320px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* Headline styling */
+.hero.hero6 > div:last-child > div > h3 {
+  font-family: Orbitron, 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 0 24px;
+  background: none;
+  max-width: 100%;
+}
+
+/* Responsive adjustments for mobile */
+@media (width <= 700px) {
+  .hero.hero6 {
+    padding: 24px 8px;
+  }
+
+  .hero.hero6 > div:last-child > div > h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero.hero6 > div:first-child > div > picture img {
+    border-radius: 14px;
+    min-height: 160px;
+  }
+}
+
+/* --- MERGED SELECTOR --- */
+.hero.hero6 {
+  background: #000;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 0;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
