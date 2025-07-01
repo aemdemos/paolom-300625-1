@@ -1,3 +1,4 @@
+/* --- Base Tabs Styles --- */
 .tabs .tabs-list {
   display: flex;
   gap: 0.5ch;
@@ -56,91 +57,97 @@
   display: none;
 }
 
+/* --- Tabs5 Styles --- */
 .tabs.tabs5 {
   background: #000;
+  max-width: 730px;
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+  min-height: 40px;
 }
 
-/* Tab Bar: increase gutter for pixel-accurate centering, ultra-compact height */
 .tabs.tabs5 .tabs-list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
   background: #000;
-  border-bottom: 2px solid #f2f2f2;
-  padding-left: 44px;
-  padding-right: 44px;
   gap: 0;
   width: 100%;
   position: relative;
   z-index: 1;
   box-sizing: border-box;
-  min-height: 28px;
+  align-items: center;
+  justify-content: stretch;
+  padding: 0;
+  margin: 0;
+  height: 36px;
+  min-height: 36px;
+  border-bottom: none;
 }
 
-/* Tab Button: equal width, no extra space, tight height, pixel-tuned font */
 .tabs.tabs5 .tabs-tab {
   flex: 1 1 0;
   min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
   border: none;
-  color: rgb(255 255 255 / 50%);
-  font-size: 13.5px;
+  color: #7c7c7c;
+  font-family: var(--body-font-family);
+  font-size: 15px;
   font-weight: 400;
-  height: 28px;
+  height: 36px;
   margin: 0;
   padding: 0 10px;
   cursor: pointer;
   transition: color 0.2s, font-weight 0.2s, border-bottom-color 0.2s;
   box-sizing: border-box;
   position: relative;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Remove p tag margins for text alignment */
+.tabs.tabs5 .tabs-list > .tabs-tab + .tabs-tab {
+  margin-left: 0;
+}
+
 .tabs.tabs5 .tabs-tab p {
   margin: 0;
   padding: 0;
   width: 100%;
   text-align: center;
+  font-size: 15px;
+  font-weight: inherit;
+  line-height: 36px;
+  color: inherit;
+  pointer-events: none;
 }
 
-/* Active Tab: underline flush, full-width, thin for pixel-accuracy */
 .tabs.tabs5 .tabs-tab[aria-selected="true"] {
   color: #fff;
   font-weight: 600;
   border-bottom: 2px solid #fff;
   padding-bottom: 0;
   cursor: default;
+  z-index: 1;
 }
 
-/* Inactive Tab: no underline, faded color */
 .tabs.tabs5 .tabs-tab[aria-selected="false"] {
-  color: rgb(255 255 255 / 50%);
+  color: #7c7c7c;
   font-weight: 400;
-  border-bottom: 2px solid transparent;
+  border-bottom: none;
+  z-index: 0;
 }
 
-/* Remove any possible side margin between tab buttons */
-.tabs.tabs5 .tabs-list > .tabs-tab + .tabs-tab {
-  margin-left: 0;
-}
-
-/* Tab panel: match black background, match new gutter */
 .tabs.tabs5 .tabs-panel {
   background: #000;
   color: #fff;
   border: none;
   margin-top: 0;
-  padding-left: 44px;
-  padding-right: 44px;
+  padding: 0 44px;
 }
 
-/* Hide inactive tab panels */
 .tabs.tabs5 .tabs-panel[aria-hidden="true"] {
   display: none;
 }
@@ -149,7 +156,6 @@
   display: block;
 }
 
-/* Remove inherited button styles */
 .tabs.tabs5 .tabs-tab.button,
 .tabs.tabs5 button.tabs-tab {
   background: transparent;
