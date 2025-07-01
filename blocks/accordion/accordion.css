@@ -59,3 +59,94 @@
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
+
+.accordion.accordion7 {
+  background: #fafaf6;
+  max-width: 928px;
+  margin: 0 auto;
+  border-radius: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.accordion.accordion7 .accordion-item {
+  border: none;
+  margin: 0;
+  background: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.accordion.accordion7 .accordion-item:not(:last-child) {
+  border-bottom: 1px solid #ededed;
+}
+
+.accordion.accordion7 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 24px 13px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #262626;
+  font-weight: normal;
+  line-height: 1.4;
+  background: transparent;
+  outline: none;
+  border: none;
+  list-style: none;
+  overflow: visible;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.accordion.accordion7 .accordion-item-label::-webkit-details-marker {
+  display: none;
+}
+
+.accordion.accordion7 .accordion-item-label p {
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.accordion.accordion7 .accordion-item-label::after {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  margin-left: 12px;
+  border: solid #3c3c3b;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 1px 1px 0;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.accordion.accordion7 .accordion-item[open] > .accordion-item-label::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.accordion.accordion7 .accordion-item-label:focus,
+.accordion.accordion7 .accordion-item-label:hover {
+  background: transparent;
+}
+
+.accordion.accordion7 .accordion-item-body {
+  display: none;
+  padding: 13px 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #262626;
+  box-sizing: border-box;
+}
+
+.accordion.accordion7 .accordion-item[open] .accordion-item-body {
+  display: block;
+}
