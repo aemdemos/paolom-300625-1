@@ -1,3 +1,4 @@
+/* Empty line before rules for readability */
 
 .hero-container .hero-wrapper {
   max-width: unset;
@@ -59,6 +60,21 @@
   margin: 0;
 }
 
+.hero.hero8 > div:first-child {
+  flex: 0 0 5vw;
+  max-width: 5vw;
+  min-width: 40px;
+}
+
+.hero.hero8 > div:nth-child(2) {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+}
+
 /* Remove any unwanted collapse on inner divs */
 .hero.hero6 > div:first-child,
 .hero.hero6 > div:first-child > div {
@@ -92,7 +108,7 @@
 
 /* Headline styling */
 .hero.hero6 > div:last-child > div > h3 {
-  font-family: Orbitron, 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-family: Orbitron, "Arial Rounded MT Arial", Arial, sans-serif;
   font-size: 2.5rem;
   line-height: 1.1;
   letter-spacing: 0.06em;
@@ -131,4 +147,138 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* ====== MERGED SELECTOR FOR .hero.hero8 ====== */
+.hero.hero8 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #fff;
+  padding: 64px 0;
+  min-height: 340px;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Text block */
+.hero.hero8 > div:nth-child(2) > div {
+  max-width: 560px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding-right: 280px; /* Room for absolutely positioned button column */
+}
+
+/* Headline */
+.hero.hero8 h2 {
+  font-family: Orbitron, "Arial Rounded MT Arial", Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #181818;
+  margin: 0 0 18px;
+  line-height: 1.08;
+  text-align: left;
+  max-width: 540px;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Description */
+.hero.hero8 p {
+  font-size: 1.07rem;
+  color: #232323;
+  margin: 0 0 14px;
+  max-width: 540px;
+  text-align: left;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Button column: absolutely position to the right */
+@media (width >= 900px) {
+  .hero.hero8 > div:nth-child(2) > div > p:last-of-type {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    min-width: 240px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+  }
+}
+
+/* On mobile/tablet: stack as before */
+@media (width <= 899px) {
+  .hero.hero8 {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 32px 0;
+  }
+
+  .hero.hero8 > div:first-child {
+    display: none;
+  }
+
+  .hero.hero8 > div:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hero.hero8 > div:nth-child(2) > div {
+    max-width: 98vw;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .hero.hero8 > div:nth-child(2) > div > p:last-of-type {
+    position: static;
+    transform: none;
+    min-width: 0;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 32px;
+    gap: 18px;
+  }
+}
+
+/* Button styles */
+.hero.hero8 p:last-of-type a {
+  display: block;
+  width: 220px;
+  min-width: 160px;
+  padding: 13px 0;
+  color: #181818;
+  background: #fff;
+  border: 2px solid #181818;
+  border-radius: 1600px;
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
+  cursor: pointer;
+  margin: 0;
+}
+
+.hero.hero8 p:last-of-type a:first-child {
+  border-bottom: 2px solid #e9e65c;
+}
+
+.hero.hero8 p:last-of-type a:hover,
+.hero.hero8 p:last-of-type a:focus {
+  box-shadow: 0 0 10px #e9e65c44;
+  background: #fafadc;
 }
