@@ -60,22 +60,6 @@
   margin: 0;
 }
 
-.hero.hero8 > div:first-child {
-  flex: 0 0 5vw;
-  max-width: 5vw;
-  min-width: 40px;
-}
-
-.hero.hero8 > div:nth-child(2) {
-  position: relative;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-width: 0;
-}
-
-/* Remove any unwanted collapse on inner divs */
 .hero.hero6 > div:first-child,
 .hero.hero6 > div:first-child > div {
   display: block;
@@ -86,7 +70,6 @@
   padding: 0;
 }
 
-/* Make the image visible and styled */
 .hero.hero6 > div:first-child > div > picture {
   display: block;
   width: 100%;
@@ -121,7 +104,6 @@
   max-width: 100%;
 }
 
-/* Responsive adjustments for mobile */
 @media (width <= 700px) {
   .hero.hero6 {
     padding: 24px 8px;
@@ -137,87 +119,179 @@
   }
 }
 
-/* --- MERGED SELECTOR --- */
-.hero.hero6 {
-  background: #000;
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 0;
-  padding: 40px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* ====== MERGED SELECTOR FOR .hero.hero8 ====== */
 .hero.hero8 {
   display: flex;
   flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
   width: 100%;
+  min-height: 340px;
   background: #fff;
   padding: 64px 0;
-  min-height: 340px;
-  align-items: stretch;
   box-sizing: border-box;
+  position: relative;
 }
 
-/* Text block */
-.hero.hero8 > div:nth-child(2) > div {
-  max-width: 560px;
+/* Left spacer column */
+.hero.hero8 > div:first-child {
+  flex: 0 0 60px;
+  max-width: 60px;
+  min-width: 40px;
+  display: block;
+}
+
+/* Main content & buttons row */
+.hero.hero8 > div:nth-child(2) {
   flex: 1 1 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   min-width: 0;
-  padding-right: 280px; /* Room for absolutely positioned button column */
+  width: 100%;
+  position: relative;
+  height: 100%;
 }
 
-/* Headline */
+/* Text block column, vertically centered and wider */
+.hero.hero8 > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 1 420px;
+  max-width: 420px;
+  min-width: 0;
+  padding-right: 240px;
+  height: 100%;
+}
+
+/* Headline with correct line-breaks */
 .hero.hero8 h2 {
-  font-family: Orbitron, "Arial Rounded MT Arial", Arial, sans-serif;
+  font-family: Orbitron, Syncopate, Arial, sans-serif;
   font-size: 2.4rem;
   font-weight: 400;
-  letter-spacing: 0.03em;
-  color: #181818;
-  margin: 0 0 18px;
-  line-height: 1.08;
-  text-align: left;
-  max-width: 540px;
-  overflow-wrap: break-word;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+  max-width: 415px;
   white-space: normal;
+  overflow-wrap: break-word;
 }
 
-/* Description */
+/* Paragraph under headline */
 .hero.hero8 p {
-  font-size: 1.07rem;
-  color: #232323;
-  margin: 0 0 14px;
-  max-width: 540px;
-  text-align: left;
+  font-family: var(--body-font-family);
+  font-size: 1.02rem;
+  color: #888;
+  margin: 0 0 0.5em;
   line-height: 1.5;
-  overflow-wrap: break-word;
-  white-space: normal;
+  max-width: 360px;
+  text-align: left;
 }
 
-/* Button column: absolutely position to the right */
+.hero.hero8 p:last-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  min-width: 120px;
+}
+
+/* Pill button styles */
+.hero.hero8 p:last-of-type a {
+  display: block;
+  width: 205px;
+  min-width: 110px;
+  padding: 13px 0;
+  font-family: var(--body-font-family);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px solid #1a1a1a;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+  margin: 0;
+  transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.hero.hero8 p:last-of-type a:first-child {
+  border-bottom: 2px solid #f7f586;
+}
+
 @media (width >= 900px) {
-  .hero.hero8 > div:nth-child(2) > div > p:last-of-type {
+  .hero.hero8 > div:nth-child(2) > div {
+    padding-right: 280px;
+    max-width: 560px;
+  }
+
+  .hero.hero8 h2 {
+    font-size: 2.4rem;
+    letter-spacing: 0.03em;
+    max-width: 540px;
+    line-height: 1.08;
+    color: #181818;
+    margin: 0 0 18px;
+  }
+
+  .hero.hero8 p {
+    font-size: 1.07rem;
+    color: #232323;
+    margin: 0 0 14px;
+    max-width: 540px;
+  }
+
+  .hero.hero8 p:last-of-type {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    margin: 0;
     min-width: 240px;
     width: 240px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 18px;
+    margin: 0;
     padding: 0;
+    align-items: center;
   }
 }
 
-/* On mobile/tablet: stack as before */
+@media (width <= 1000px) {
+  .hero.hero8 > div:first-child {
+    display: none;
+  }
+
+  .hero.hero8 > div:nth-child(2) > div {
+    padding-right: 0;
+    max-width: 98vw;
+    width: 100%;
+  }
+
+  .hero.hero8 p:last-of-type {
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 32px;
+    gap: 10px;
+  }
+}
+
 @media (width <= 899px) {
   .hero.hero8 {
     flex-direction: column;
@@ -241,7 +315,7 @@
     padding-right: 0;
   }
 
-  .hero.hero8 > div:nth-child(2) > div > p:last-of-type {
+  .hero.hero8 p:last-of-type {
     position: static;
     transform: none;
     min-width: 0;
@@ -252,33 +326,39 @@
   }
 }
 
-/* Button styles */
-.hero.hero8 p:last-of-type a {
-  display: block;
-  width: 220px;
-  min-width: 160px;
-  padding: 13px 0;
-  color: #181818;
-  background: #fff;
-  border: 2px solid #181818;
-  border-radius: 1600px;
-  box-shadow: none;
-  font-weight: 400;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
-  cursor: pointer;
-  margin: 0;
-}
+@media (width <= 700px) {
+  .hero.hero8 {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 32px 0;
+    min-height: unset;
+  }
 
-.hero.hero8 p:last-of-type a:first-child {
-  border-bottom: 2px solid #e9e65c;
-}
+  .hero.hero8 > div:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
 
-.hero.hero8 p:last-of-type a:hover,
-.hero.hero8 p:last-of-type a:focus {
-  box-shadow: 0 0 10px #e9e65c44;
-  background: #fafadc;
+  .hero.hero8 > div:nth-child(2) > div {
+    max-width: 98vw;
+    width: 100%;
+    min-height: unset;
+    padding-right: 0;
+  }
+
+  .hero.hero8 h2 {
+    font-size: 1.3rem;
+    max-width: 96vw;
+  }
+
+  .hero.hero8 p {
+    font-size: 0.95rem;
+    max-width: 96vw;
+  }
+
+  .hero.hero8 p:last-of-type a {
+    width: 98vw;
+    min-width: 0;
+  }
 }
